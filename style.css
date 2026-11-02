@@ -1,0 +1,291 @@
+/* ========== GLOBAL ========== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* ========== MAIN AREA ========== */
+.main-content,
+.main-container {
+    margin-left: 270px;
+    padding: 30px;
+    transition: margin-left 0.3s ease;
+}
+
+/* ========== TOPBAR ========== */
+.topbar {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.25);
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* ========== STATUS BAR ========== */
+.status-bar {
+    background: #e0f2fe;
+    color: #0c4a6e;
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #16a34a;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* ========== CARDS ========== */
+.cyber-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid #e2e8f0;
+    height: 100%;
+}
+
+.cyber-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(15,23,42,0.12);
+}
+
+.cyber-card h5 {
+    color: #64748b;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.cyber-card h2 {
+    font-size: 32px;
+    margin: 0;
+    color: #0f172a;
+    word-break: break-word;
+}
+
+.cyber-card.primary { border-left: 5px solid #2563eb; }
+.cyber-card.success { border-left: 5px solid #16a34a; }
+.cyber-card.warning { border-left: 5px solid #f59e0b; }
+.cyber-card.danger  { border-left: 5px solid #dc2626; }
+
+/* ========== TABLES ========== */
+.table-section,
+.chart-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+}
+
+.table {
+    margin-bottom: 0;
+    min-width: 600px;
+}
+
+.table thead {
+    background: #eff6ff;
+}
+
+.table thead th {
+    color: #1e40af;
+    border-bottom: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* ========== BADGES ========== */
+.badge-high {
+    background: #ea580c;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* ========== BUTTONS ========== */
+.btn-outline-custom {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    border-radius: 10px;
+}
+
+.btn-outline-custom:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    text-align: center;
+    color: #64748b;
+    margin-top: 30px;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+/* ========== MOBILE MENU BUTTON ========== */
+.menu-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.35);
+}
+
+/* ========== TABLET (<= 992px) ========== */
+@media (max-width: 992px) {
+
+    .main-content,
+    .main-container {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .topbar {
+        margin-top: 50px;
+    }
+}
+
+/* ========== MOBILE (<= 768px) ========== */
+@media (max-width: 768px) {
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .cyber-card {
+        padding: 20px;
+    }
+
+    .cyber-card h2 {
+        font-size: 26px;
+    }
+
+    .table-section,
+    .chart-card {
+        padding: 18px;
+    }
+
+    .topbar {
+        padding: 18px;
+    }
+}
+
+/* ========== SMALL MOBILE (<= 480px) ========== */
+@media (max-width: 480px) {
+
+    .main-content,
+    .main-container {
+        padding: 15px;
+    }
+
+    .topbar {
+        padding: 16px;
+    }
+
+    .topbar h1 {
+        font-size: 20px;
+    }
+
+    .cyber-card h2 {
+        font-size: 22px;
+    }
+
+    .status-bar {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+}
